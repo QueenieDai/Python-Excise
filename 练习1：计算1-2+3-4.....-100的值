@@ -1,0 +1,18 @@
+#!/usr/bin/python
+#-- coding: UTF-8 --
+#包含判断过程
+i = 0
+s = 0
+s1 = 0
+s2 = 0
+while i < 101:  
+    if i%2 != 0:#判断i为奇数时
+        s1 = i
+        s = s + s1
+    elif i%2 == 0:#判断i是偶数时
+        s2 = -i
+        s = s + s2
+    else:
+        pass
+    i = i + 1
+print(s)
