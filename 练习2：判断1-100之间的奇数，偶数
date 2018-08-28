@@ -1,0 +1,22 @@
+#!/usr/bin/python
+#-- coding: UTF-8 --
+#通过%2判断是否能为2整除，能整处为偶数
+i = 0
+while i < 101:
+if i%2 == 0:#假如i是偶数
+print(i)
+else:
+pass
+i = i + 1
+
+#输出1-100之间的奇数
+#!/usr/bin/python
+
+#-- coding: UTF-8 --
+i = 0
+while i < 101:
+if i%2 != 0:#假如i是奇数
+print(i)
+else:
+pass
+i = i + 1
