@@ -1,0 +1,36 @@
+#!/usr/bin/python
+#-- coding: UTF-8 --
+#设置初始密码
+initial_username = input("请输入初始用户名：")
+initial_pw       = input("请设置初始密码：")
+
+print("您设置的初始用户名是：",initial_username)
+print('您设置的初始密码是：',initial_pw)
+
+#计算尝试次数，try1为正确次数，try0为错误值；
+try1 = 0
+try0 = 0
+
+print('请输入登陆账号')
+
+
+#开始验证循环体
+while True:
+    username = input('请输入用户名：')#先输入用户名
+    if username == initial_username: 
+        while try0 < 3:#因为跳出这个循环体的两个条件①输入正确密码，②密码输入错误了3次，如果以输入密码正确为判断条件，密码错误时无法回到输入密码的循环体
+            pw = input("请输入密码：")
+            if pw == initial_pw:
+                print('登陆成功')
+                try1 = try1 +1
+                break
+            else:
+                print('密码错误，重新输入')
+                try0 = try0+1
+        if try1 == 1:#如果不指定在密码正确时跳出，如果没有增加这个判断，后面的句式也会跟着输出。
+            break
+        try0 = 0
+        print('已尝试3次，请重新输入用户名')
+        break
+    else:
+        print('用户名错误，请重新输入')
