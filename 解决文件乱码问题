@@ -13,3 +13,12 @@ data = pd.read_csv('cm_orders.csv',sep =',',header=1,encoding = 'gb2312')
 print(data.)
 
 #总算，让csv文件按照我想要的格式打开了！！！！！！！收工！！！
+
+
+#补充， 尝试用open()打开txt文件指定编码格式，发现解决了，此前用encoding方式指定编码解决不了，主要是因为误以为原文件的编码是utf-8, 后来用enca查看文件发现是gb2312的格式，
+
+f = open('cm_orders.txt','r',encoding = 'gb2312')#没有报错，成功读取。
+print(f.read())
+
+f = open('cm_orders.txt','r',encoding = 'utf-8') #报错，因为传入的编码格式不正确
+print(f.read())
