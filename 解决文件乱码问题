@@ -1,0 +1,13 @@
+#由于后台导出的数据包含中文编码，编码形式都是gb2312格式，但是python2.x 默认的编码是ASCII,而python 3.x 打开文件就会乱码
+#解决方法是打开文件的时候就指定解码方式，告诉程序将文件以某种编码形式解码为unicode的格式，输出文件的时候再告诉程序以某种编码格式写入；
+#查看了 很多教程，发现这个教程写的比较清楚：https://www.cnblogs.com/shengulong/p/7097869.html。
+#decode().encode()可以针对字符串转码，但是无法 用于读取文件的操作。
+#可以考虑codecs模块，codecs.open()函数可以指定解码方式；如下
+f = codecs.open('data.txt','r','gb2312')
+#但是报错了， <codecs.StreamReaderWriter object at 0x031A0AF0>
+#后来尝试使用pd.csv_read(),可以指定encoding格式（之前用Open函数，指定encoding格式，执行也报错了。。。撞了无数的墙）
+
+data = pd.read_csv('cm_orders.csv',sep =',',header=1,encoding = 'gb2312')
+print(data.)
+
+#总算，让csv文件按照我想要的格式打开了！！！！！！！收工！！！
