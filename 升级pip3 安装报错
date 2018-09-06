@@ -1,0 +1,4 @@
+#今天import pandas时报错，查询了下我明明有安装，网络找了下告诉我要卸载再重装。
+#重装过程提示我升级pip3管理器。升级了。
+# 再使用pip3 install pandas的命令时报错了，WINerror 5 ，提示的解决方式是使用 pip3 install --user pipname
+#然后就解决了。。。没心力去知其所以然，先放下吧。。以后有机会再摸索下。
