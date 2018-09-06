@@ -1,3 +1,5 @@
+#!/usr/bin/python
+#-- coding: UTF-8 --
 #由于后台导出的数据包含中文编码，编码形式都是gb2312格式，但是python2.x 默认的编码是ASCII,而python 3.x 打开文件就会乱码
 #解决方法是打开文件的时候就指定解码方式，告诉程序将文件以某种编码形式解码为unicode的格式，输出文件的时候再告诉程序以某种编码格式写入；
 #查看了 很多教程，发现这个教程写的比较清楚：https://www.cnblogs.com/shengulong/p/7097869.html。
