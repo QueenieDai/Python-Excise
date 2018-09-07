@@ -1,0 +1,20 @@
+#!/usr/bin/python
+#-- coding: UTF-8 --
+
+import os
+os.chdir('D:\APP流量包\运营工作项\\201809\叠加包按日')
+import pandas as pd
+import xlwt 
+
+#定义一个参数打开文件并根据条件统计数据
+def CoutData(f1,c1,p1):
+    #打开f1文件
+    # 筛选C1列，以p1为条件
+    data = pd.read_csv(f1,sep =',',header=0,encoding = 'gb2312')
+    m = data.loc[data[c1] == p1,'手机号'].count()
+    return m
+#处理文件，将符合条件的之筛选出来存储为其他文件
+#以营收账单为例，筛选出套餐名称包含"叠加包”，及“6G全国”的套餐数据，需要的爹数据包括手机号码、订购次数、运营商
+#基本思路①打开源文件，用csv_reader 文件a;②筛选所有值并存储新文件b，③合并a,b两个表格的值，获得汇总表为csv格式
+def Combine(f1,f2,f3,f4):
+    data2 = pd.read_csv()
