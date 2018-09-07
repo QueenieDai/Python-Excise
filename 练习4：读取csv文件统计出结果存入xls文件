@@ -1,0 +1,17 @@
+#!/usr/bin/python
+#-- coding: UTF-8 --
+import os
+os.chdir('D:\APP流量包\运营工作项\\201809\叠加包按日')
+import pandas as pd
+import xlwt 
+#使用pandas的read_csv模块打开csv源文件，并指定第一行为标题行，以gb2312方式解码
+data = pd.read_csv('cm_orders.csv',sep =',',header=0,encoding = 'gb2312')
+#按条件筛选出某个值的计数；
+m = data.loc[data["运营商"] == "广东移动",'运营商'].count()
+#新建某个名字为result.xls的excel文件
+result = xlwt.Workbook('result.xls')
+#新建这个文件里的表格CountAll
+table = result.add_sheet('CountAll')
+#将数据写入sheet CountAll, m值必须用str()函数转为字符串，否则报错numpy in32  用help()查看模块，查看模块所在地址，去查看原代码传入参数时必须声明的数据类型，发现write需要用float的类型，所以用float()转类型就可以了
+table.write(1,2,float(m))
+result.save('result.xls')
